@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{margin: 0;padding: 0}
+		#box{width: 500px;height: 100px;margin: 50px auto;text-align: center;font-size:1.5rem;}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<script>
+		function home(){
+			var box = document.getElementById("box") 
+			var date = new Date(2017,5,9) - new Date()
+			console.log(new Date(2017,5,3))  // 返回日期6月3号日期
+			var day = Math.floor(date/1000/60/60/24)
+			var shi = Math.floor(date/1000/60/60%24)
+			var fen = Math.floor(date/1000/60%60)
+			var miao = Math.floor(date/1000%60)
+			var time = "倒计时："+day+"天"+shi+"时"+fen+"分"+miao+"秒"
+			box.innerHTML = time
+		}
+		home()
+		setInterval(home,1000)
+	</script>
+</body>
+</html>
